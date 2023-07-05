@@ -1,7 +1,6 @@
 package com.funnycode.onlineshop.util;
 
 
-import com.funnycode.onlineshop.entity.Account;
 import com.funnycode.onlineshop.model.TokenPayload;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -20,11 +19,8 @@ public class JwtTokenUtil {
     @Value("${JWT_SECRET_KEY}")
     private String secret;
 
-    public String generateToken(Account account, long expiredDate) {
+    public String generateToken(TokenPayload tokenPayload, long expiredDate) {
         Map<String, Object> claims = new HashMap<>();
-        TokenPayload tokenPayload = TokenPayload.builder()
-                .accountId(account.getId())
-                .username(account.getUsername()).build();
         claims.put("payload", tokenPayload);
         return Jwts.builder().setClaims(claims).setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + expiredDate * 1000))
@@ -45,10 +41,10 @@ public class JwtTokenUtil {
 
     }
 
-    public boolean validate(String token, Account account) {
+    public boolean isValid(String token, TokenPayload tokenFromAccount) {
         TokenPayload tokenPayload = getTokenPayload(token);
 
-        return tokenPayload.getAccountId() == account.getId() && tokenPayload.getUsername().equals(account.getUsername())
+        return tokenPayload.getAccountId() == tokenFromAccount.getAccountId() && tokenPayload.getUsername().equals(tokenFromAccount.getUsername())
                 && !isTokenExpired(token);
     }
 

@@ -3,6 +3,7 @@ package com.funnycode.onlineshop.security;
 
 import com.funnycode.onlineshop.entity.Account;
 import com.funnycode.onlineshop.model.TokenPayload;
+import com.funnycode.onlineshop.model.mapper.AccountMapper;
 import com.funnycode.onlineshop.repository.AccountRepository;
 import com.funnycode.onlineshop.util.JwtTokenUtil;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -39,11 +40,10 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         String token = null;
         TokenPayload tokenPayLoad = null;
 
-        if (requestTokenHeader != null && requestTokenHeader.startsWith("Token ")) {
-            token = requestTokenHeader.substring(6).trim();
+        if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
+            token = requestTokenHeader.split(" ")[1];
 
             try {
-
                 tokenPayLoad = jwtTokenUtil.getTokenPayload(token);
             } catch (IllegalArgumentException ex) {
                 System.out.println("Unable to get JWT");
@@ -51,21 +51,21 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 System.out.println("Token has expired");
             }
         } else {
-            System.out.println("JWT Token does not start with 'Token '");
+            System.out.println("JWT Token does not start with 'Bearer '");
         }
 
         if (tokenPayLoad != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             Optional<Account> accountOptional = accountRepository.findById(tokenPayLoad.getAccountId());
 
             if (accountOptional.isPresent()) {
-                Account user = accountOptional.get();
+                Account account = accountOptional.get();
 
                 // check token co hop le hay ko
-                if (jwtTokenUtil.validate(token, user)) {
+                if (jwtTokenUtil.isValid(token, AccountMapper.toTokenPayload(account))) {
 
                     List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-                    UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getEmail(),
-                            user.getPassword(), authorities);
+                    UserDetails userDetails = new org.springframework.security.core.userdetails.User(account.getEmail(),
+                            account.getPassword(), authorities);
                     UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
                             userDetails, null, authorities);
 

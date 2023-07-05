@@ -4,7 +4,6 @@ import com.funnycode.onlineshop.entity.Account;
 import com.funnycode.onlineshop.model.TokenPayload;
 import com.funnycode.onlineshop.model.dto.AccountDTOCreate;
 import com.funnycode.onlineshop.model.dto.AccountDTOResponse;
-import com.funnycode.onlineshop.model.dto.LoginDTOResponse;
 
 public class AccountMapper {
     public static Account toAccount(AccountDTOCreate accountDTOCreate) {

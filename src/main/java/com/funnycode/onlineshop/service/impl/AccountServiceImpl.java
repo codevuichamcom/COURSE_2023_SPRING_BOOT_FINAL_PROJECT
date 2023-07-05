@@ -1,7 +1,6 @@
 package com.funnycode.onlineshop.service.impl;
 
 import com.funnycode.onlineshop.entity.Account;
-import com.funnycode.onlineshop.model.TokenPayload;
 import com.funnycode.onlineshop.model.dto.LoginDTORequest;
 import com.funnycode.onlineshop.model.dto.LoginDTOResponse;
 import com.funnycode.onlineshop.model.mapper.AccountMapper;

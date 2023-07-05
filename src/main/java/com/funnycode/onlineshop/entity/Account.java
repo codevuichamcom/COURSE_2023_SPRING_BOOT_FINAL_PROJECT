@@ -17,7 +17,9 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+    @Column(unique = true, nullable = false)
     String username;
+    @Column(unique = true, nullable = false)
     String email;
     String password;
 }

@@ -45,6 +45,9 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryDTOResponse updateCategory(int id, CategoryDTOUpdate categoryDTOUpdate) {
+        if (!categoryRepository.existsById(id)) {
+            throw new RuntimeException("Category does not exist");
+        }
         Category category = CategoryMapper.toCategory(categoryDTOUpdate);
         category.setId(id);
         return CategoryMapper.toCategoryDTOResponse(categoryRepository.save(category));
@@ -53,7 +56,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public CategoryDTOResponse deleteCategory(int id) {
         Category category = categoryRepository.findById(id).orElseThrow(() -> new RuntimeException("Category id does not exist"));
-        categoryRepository.deleteById(id);
+        categoryRepository.delete(category);
         return CategoryMapper.toCategoryDTOResponse(category);
     }
 }

@@ -17,6 +17,7 @@ import static com.funnycode.onlineshop.util.Constant.API_VERSION;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
 @RequestMapping(API_VERSION + "/categories")
+@CrossOrigin
 public class CategoryController {
 
     private CategoryService categoryService;

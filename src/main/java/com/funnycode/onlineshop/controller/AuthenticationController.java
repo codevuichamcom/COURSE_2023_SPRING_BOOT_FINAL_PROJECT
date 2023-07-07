@@ -14,6 +14,7 @@ import static com.funnycode.onlineshop.util.Constant.*;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
 @RequestMapping(API_VERSION)
+@CrossOrigin
 public class AuthenticationController {
 
     AccountService accountService;

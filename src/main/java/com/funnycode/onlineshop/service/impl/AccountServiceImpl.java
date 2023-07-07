@@ -50,6 +50,7 @@ public class AccountServiceImpl implements AccountService {
         final int ONE_DAY_MILLISECONDS = 24 * 60 * 60;
         String accessToken = jwtTokenUtil.generateToken(AccountMapper.toTokenPayload(account), ONE_DAY_MILLISECONDS);
         return LoginDTOResponse.builder()
+                .account(AccountMapper.toAccountDTOResponse(account))
                 .accessToken(accessToken)
                 .build();
     }

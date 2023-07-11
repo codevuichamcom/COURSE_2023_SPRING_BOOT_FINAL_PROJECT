@@ -3,7 +3,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 
-FROM openjdk:11
+FROM adoptopenjdk/openjdk11:jdk-11.0.19_7-slim
 COPY --from=build /target/onlineshop-0.0.1-SNAPSHOT.jar onlineshop-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","onlineshop-0.0.1-SNAPSHOT.jar"]

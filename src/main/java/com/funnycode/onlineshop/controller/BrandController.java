@@ -1,8 +1,8 @@
 package com.funnycode.onlineshop.controller;
 
-import com.funnycode.onlineshop.model.dto.BrandDTOCreate;
-import com.funnycode.onlineshop.model.dto.BrandDTOResponse;
-import com.funnycode.onlineshop.model.dto.BrandDTOUpdate;
+import com.funnycode.onlineshop.dto.BrandDTOCreate;
+import com.funnycode.onlineshop.dto.BrandDTOResponse;
+import com.funnycode.onlineshop.dto.BrandDTOUpdate;
 import com.funnycode.onlineshop.service.BrandService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;

@@ -1,9 +1,9 @@
-package com.funnycode.onlineshop.model.mapper;
+package com.funnycode.onlineshop.util.mapper;
 
 import com.funnycode.onlineshop.entity.Account;
 import com.funnycode.onlineshop.model.TokenPayload;
-import com.funnycode.onlineshop.model.dto.AccountDTOCreate;
-import com.funnycode.onlineshop.model.dto.AccountDTOResponse;
+import com.funnycode.onlineshop.dto.AccountDTOCreate;
+import com.funnycode.onlineshop.dto.AccountDTOResponse;
 
 public class AccountMapper {
     public static Account toAccount(AccountDTOCreate accountDTOCreate) {

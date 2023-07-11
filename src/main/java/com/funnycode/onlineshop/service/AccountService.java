@@ -1,9 +1,9 @@
 package com.funnycode.onlineshop.service;
 
-import com.funnycode.onlineshop.model.dto.AccountDTOCreate;
-import com.funnycode.onlineshop.model.dto.AccountDTOResponse;
-import com.funnycode.onlineshop.model.dto.LoginDTORequest;
-import com.funnycode.onlineshop.model.dto.LoginDTOResponse;
+import com.funnycode.onlineshop.dto.AccountDTOCreate;
+import com.funnycode.onlineshop.dto.AccountDTOResponse;
+import com.funnycode.onlineshop.dto.LoginDTORequest;
+import com.funnycode.onlineshop.dto.LoginDTOResponse;
 
 public interface AccountService {
     AccountDTOResponse createAccount(AccountDTOCreate accountDTOCreate);

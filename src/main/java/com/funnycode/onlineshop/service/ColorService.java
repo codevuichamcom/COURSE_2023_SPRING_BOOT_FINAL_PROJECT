@@ -1,8 +1,8 @@
 package com.funnycode.onlineshop.service;
 
-import com.funnycode.onlineshop.model.dto.ColorDTOCreate;
-import com.funnycode.onlineshop.model.dto.ColorDTOResponse;
-import com.funnycode.onlineshop.model.dto.ColorDTOUpdate;
+import com.funnycode.onlineshop.dto.ColorDTOCreate;
+import com.funnycode.onlineshop.dto.ColorDTOResponse;
+import com.funnycode.onlineshop.dto.ColorDTOUpdate;
 
 import java.util.List;
 

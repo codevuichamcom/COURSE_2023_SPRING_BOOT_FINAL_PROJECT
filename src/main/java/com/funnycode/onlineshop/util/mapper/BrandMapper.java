@@ -1,9 +1,9 @@
-package com.funnycode.onlineshop.model.mapper;
+package com.funnycode.onlineshop.util.mapper;
 
 import com.funnycode.onlineshop.entity.Brand;
-import com.funnycode.onlineshop.model.dto.BrandDTOCreate;
-import com.funnycode.onlineshop.model.dto.BrandDTOResponse;
-import com.funnycode.onlineshop.model.dto.BrandDTOUpdate;
+import com.funnycode.onlineshop.dto.BrandDTOCreate;
+import com.funnycode.onlineshop.dto.BrandDTOResponse;
+import com.funnycode.onlineshop.dto.BrandDTOUpdate;
 
 public class BrandMapper {
     public static Brand toBrand(BrandDTOCreate brandDTOCreate) {

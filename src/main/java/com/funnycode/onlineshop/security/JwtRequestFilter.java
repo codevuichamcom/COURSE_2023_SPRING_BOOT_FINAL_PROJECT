@@ -3,7 +3,7 @@ package com.funnycode.onlineshop.security;
 
 import com.funnycode.onlineshop.entity.Account;
 import com.funnycode.onlineshop.model.TokenPayload;
-import com.funnycode.onlineshop.model.mapper.AccountMapper;
+import com.funnycode.onlineshop.util.mapper.AccountMapper;
 import com.funnycode.onlineshop.repository.AccountRepository;
 import com.funnycode.onlineshop.util.JwtTokenUtil;
 import io.jsonwebtoken.ExpiredJwtException;

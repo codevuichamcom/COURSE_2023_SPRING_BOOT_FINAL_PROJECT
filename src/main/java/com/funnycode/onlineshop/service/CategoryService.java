@@ -1,8 +1,8 @@
 package com.funnycode.onlineshop.service;
 
-import com.funnycode.onlineshop.model.dto.CategoryDTOCreate;
-import com.funnycode.onlineshop.model.dto.CategoryDTOResponse;
-import com.funnycode.onlineshop.model.dto.CategoryDTOUpdate;
+import com.funnycode.onlineshop.dto.CategoryDTOCreate;
+import com.funnycode.onlineshop.dto.CategoryDTOResponse;
+import com.funnycode.onlineshop.dto.CategoryDTOUpdate;
 
 import java.util.List;
 

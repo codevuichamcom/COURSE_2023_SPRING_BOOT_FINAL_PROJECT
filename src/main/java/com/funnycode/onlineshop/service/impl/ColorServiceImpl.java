@@ -1,10 +1,10 @@
 package com.funnycode.onlineshop.service.impl;
 
 import com.funnycode.onlineshop.entity.Color;
-import com.funnycode.onlineshop.model.dto.ColorDTOCreate;
-import com.funnycode.onlineshop.model.dto.ColorDTOResponse;
-import com.funnycode.onlineshop.model.dto.ColorDTOUpdate;
-import com.funnycode.onlineshop.model.mapper.ColorMapper;
+import com.funnycode.onlineshop.dto.ColorDTOCreate;
+import com.funnycode.onlineshop.dto.ColorDTOResponse;
+import com.funnycode.onlineshop.dto.ColorDTOUpdate;
+import com.funnycode.onlineshop.util.mapper.ColorMapper;
 import com.funnycode.onlineshop.repository.ColorRepository;
 import com.funnycode.onlineshop.service.ColorService;
 import lombok.AccessLevel;

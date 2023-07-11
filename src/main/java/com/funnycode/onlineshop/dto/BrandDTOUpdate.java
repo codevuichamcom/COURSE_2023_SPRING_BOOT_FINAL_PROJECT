@@ -1,5 +1,4 @@
-package com.funnycode.onlineshop.model.dto;
-
+package com.funnycode.onlineshop.dto;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -10,6 +9,6 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CategoryDTOCreate {
-    String categoryName;
+public class BrandDTOUpdate {
+    String branchName;
 }

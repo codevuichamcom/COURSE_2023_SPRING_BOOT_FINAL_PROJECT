@@ -1,4 +1,4 @@
-package com.funnycode.onlineshop.model.dto;
+package com.funnycode.onlineshop.dto;
 
 import lombok.AccessLevel;
 import lombok.Builder;

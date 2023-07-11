@@ -1,9 +1,9 @@
-package com.funnycode.onlineshop.model.mapper;
+package com.funnycode.onlineshop.util.mapper;
 
 import com.funnycode.onlineshop.entity.Color;
-import com.funnycode.onlineshop.model.dto.ColorDTOCreate;
-import com.funnycode.onlineshop.model.dto.ColorDTOResponse;
-import com.funnycode.onlineshop.model.dto.ColorDTOUpdate;
+import com.funnycode.onlineshop.dto.ColorDTOCreate;
+import com.funnycode.onlineshop.dto.ColorDTOResponse;
+import com.funnycode.onlineshop.dto.ColorDTOUpdate;
 
 public class ColorMapper {
     public static Color toColor(ColorDTOCreate colorDTOCreate) {

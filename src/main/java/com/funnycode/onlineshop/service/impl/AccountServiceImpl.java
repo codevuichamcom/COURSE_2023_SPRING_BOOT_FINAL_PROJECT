@@ -1,11 +1,11 @@
 package com.funnycode.onlineshop.service.impl;
 
 import com.funnycode.onlineshop.entity.Account;
-import com.funnycode.onlineshop.model.dto.LoginDTORequest;
-import com.funnycode.onlineshop.model.dto.LoginDTOResponse;
-import com.funnycode.onlineshop.model.mapper.AccountMapper;
-import com.funnycode.onlineshop.model.dto.AccountDTOCreate;
-import com.funnycode.onlineshop.model.dto.AccountDTOResponse;
+import com.funnycode.onlineshop.dto.LoginDTORequest;
+import com.funnycode.onlineshop.dto.LoginDTOResponse;
+import com.funnycode.onlineshop.util.mapper.AccountMapper;
+import com.funnycode.onlineshop.dto.AccountDTOCreate;
+import com.funnycode.onlineshop.dto.AccountDTOResponse;
 import com.funnycode.onlineshop.repository.AccountRepository;
 import com.funnycode.onlineshop.service.AccountService;
 import com.funnycode.onlineshop.util.JwtTokenUtil;

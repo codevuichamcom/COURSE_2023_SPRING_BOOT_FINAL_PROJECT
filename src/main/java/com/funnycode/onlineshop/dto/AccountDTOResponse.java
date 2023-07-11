@@ -1,4 +1,4 @@
-package com.funnycode.onlineshop.model.dto;
+package com.funnycode.onlineshop.dto;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -10,7 +10,8 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class BrandDTOResponse {
+public class AccountDTOResponse {
     int id;
-    String branchName;
+    String username;
+    String email;
 }

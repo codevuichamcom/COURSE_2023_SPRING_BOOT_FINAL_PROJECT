@@ -1,9 +1,9 @@
-package com.funnycode.onlineshop.model.mapper;
+package com.funnycode.onlineshop.util.mapper;
 
 import com.funnycode.onlineshop.entity.Category;
-import com.funnycode.onlineshop.model.dto.CategoryDTOCreate;
-import com.funnycode.onlineshop.model.dto.CategoryDTOResponse;
-import com.funnycode.onlineshop.model.dto.CategoryDTOUpdate;
+import com.funnycode.onlineshop.dto.CategoryDTOCreate;
+import com.funnycode.onlineshop.dto.CategoryDTOResponse;
+import com.funnycode.onlineshop.dto.CategoryDTOUpdate;
 
 public class CategoryMapper {
     public static CategoryDTOResponse toCategoryDTOResponse(Category category) {

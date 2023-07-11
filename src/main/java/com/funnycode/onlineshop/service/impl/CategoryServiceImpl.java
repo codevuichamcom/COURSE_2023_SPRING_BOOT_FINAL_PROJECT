@@ -1,10 +1,10 @@
 package com.funnycode.onlineshop.service.impl;
 
 import com.funnycode.onlineshop.entity.Category;
-import com.funnycode.onlineshop.model.dto.CategoryDTOCreate;
-import com.funnycode.onlineshop.model.dto.CategoryDTOResponse;
-import com.funnycode.onlineshop.model.dto.CategoryDTOUpdate;
-import com.funnycode.onlineshop.model.mapper.CategoryMapper;
+import com.funnycode.onlineshop.dto.CategoryDTOCreate;
+import com.funnycode.onlineshop.dto.CategoryDTOResponse;
+import com.funnycode.onlineshop.dto.CategoryDTOUpdate;
+import com.funnycode.onlineshop.util.mapper.CategoryMapper;
 import com.funnycode.onlineshop.repository.CategoryRepository;
 import com.funnycode.onlineshop.service.CategoryService;
 import lombok.AccessLevel;

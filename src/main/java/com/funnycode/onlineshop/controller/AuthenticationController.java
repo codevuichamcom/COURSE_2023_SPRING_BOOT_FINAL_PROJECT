@@ -1,7 +1,7 @@
 package com.funnycode.onlineshop.controller;
 
-import com.funnycode.onlineshop.model.dto.LoginDTORequest;
-import com.funnycode.onlineshop.model.dto.LoginDTOResponse;
+import com.funnycode.onlineshop.dto.LoginDTORequest;
+import com.funnycode.onlineshop.dto.LoginDTOResponse;
 import com.funnycode.onlineshop.service.AccountService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;

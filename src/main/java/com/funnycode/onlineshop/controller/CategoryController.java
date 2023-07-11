@@ -1,8 +1,8 @@
 package com.funnycode.onlineshop.controller;
 
-import com.funnycode.onlineshop.model.dto.CategoryDTOResponse;
-import com.funnycode.onlineshop.model.dto.CategoryDTOCreate;
-import com.funnycode.onlineshop.model.dto.CategoryDTOUpdate;
+import com.funnycode.onlineshop.dto.CategoryDTOResponse;
+import com.funnycode.onlineshop.dto.CategoryDTOCreate;
+import com.funnycode.onlineshop.dto.CategoryDTOUpdate;
 import com.funnycode.onlineshop.service.CategoryService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;

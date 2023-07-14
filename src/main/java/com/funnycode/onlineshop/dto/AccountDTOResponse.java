@@ -14,4 +14,5 @@ public class AccountDTOResponse {
     int id;
     String username;
     String email;
+    String avatar;
 }

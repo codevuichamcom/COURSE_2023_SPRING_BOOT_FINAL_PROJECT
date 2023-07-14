@@ -14,4 +14,5 @@ public class AccountDTOCreate {
     String username;
     String email;
     String password;
+    String avatar;
 }

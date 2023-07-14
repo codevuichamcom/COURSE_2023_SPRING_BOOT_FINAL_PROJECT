@@ -11,6 +11,7 @@ public class AccountMapper {
                 .username(accountDTOCreate.getUsername())
                 .email(accountDTOCreate.getEmail())
                 .password(accountDTOCreate.getPassword())
+                .avatar(accountDTOCreate.getAvatar())
                 .build();
     }
 
@@ -19,6 +20,7 @@ public class AccountMapper {
                 .id(account.getId())
                 .username(account.getUsername())
                 .email(account.getEmail())
+                .avatar(account.getAvatar())
                 .build();
     }
 

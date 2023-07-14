@@ -22,4 +22,5 @@ public class Account {
     @Column(unique = true, nullable = false)
     String email;
     String password;
+    String avatar;
 }

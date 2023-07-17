@@ -4,6 +4,7 @@ import com.funnycode.onlineshop.entity.Category;
 import com.funnycode.onlineshop.dto.CategoryDTOCreate;
 import com.funnycode.onlineshop.dto.CategoryDTOResponse;
 import com.funnycode.onlineshop.dto.CategoryDTOUpdate;
+import com.funnycode.onlineshop.exception.OnlineShopException;
 import com.funnycode.onlineshop.util.mapper.CategoryMapper;
 import com.funnycode.onlineshop.repository.CategoryRepository;
 import com.funnycode.onlineshop.service.CategoryService;
@@ -39,14 +40,14 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryDTOResponse getCategoryById(int id) {
-        Category category = categoryRepository.findById(id).orElseThrow(() -> new RuntimeException("Category does not exist"));
+        Category category = categoryRepository.findById(id).orElseThrow(() -> OnlineShopException.notFoundException("Category does not exist"));
         return CategoryMapper.toCategoryDTOResponse(category);
     }
 
     @Override
     public CategoryDTOResponse updateCategory(int id, CategoryDTOUpdate categoryDTOUpdate) {
         if (!categoryRepository.existsById(id)) {
-            throw new RuntimeException("Category does not exist");
+            throw OnlineShopException.notFoundException("Category does not exist");
         }
         Category category = CategoryMapper.toCategory(categoryDTOUpdate);
         category.setId(id);
@@ -55,7 +56,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryDTOResponse deleteCategory(int id) {
-        Category category = categoryRepository.findById(id).orElseThrow(() -> new RuntimeException("Category id does not exist"));
+        Category category = categoryRepository.findById(id).orElseThrow(() -> OnlineShopException.notFoundException("Category does not exist"));
         categoryRepository.delete(category);
         return CategoryMapper.toCategoryDTOResponse(category);
     }

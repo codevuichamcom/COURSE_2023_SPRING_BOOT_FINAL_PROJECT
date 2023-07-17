@@ -4,6 +4,7 @@ import com.funnycode.onlineshop.entity.Color;
 import com.funnycode.onlineshop.dto.ColorDTOCreate;
 import com.funnycode.onlineshop.dto.ColorDTOResponse;
 import com.funnycode.onlineshop.dto.ColorDTOUpdate;
+import com.funnycode.onlineshop.exception.OnlineShopException;
 import com.funnycode.onlineshop.util.mapper.ColorMapper;
 import com.funnycode.onlineshop.repository.ColorRepository;
 import com.funnycode.onlineshop.service.ColorService;
@@ -44,7 +45,7 @@ public class ColorServiceImpl implements ColorService {
     @Override
     public ColorDTOResponse updateColor(int id, ColorDTOUpdate ColorDTOUpdate) {
         if (!colorRepository.existsById(id)) {
-            throw new RuntimeException("Color does not exist");
+            throw OnlineShopException.notFoundException("Color does not exist");
         }
         Color Color = ColorMapper.toColor(ColorDTOUpdate);
         Color.setId(id);

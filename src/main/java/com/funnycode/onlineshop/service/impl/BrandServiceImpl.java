@@ -4,6 +4,7 @@ import com.funnycode.onlineshop.dto.BrandDTOCreate;
 import com.funnycode.onlineshop.dto.BrandDTOResponse;
 import com.funnycode.onlineshop.dto.BrandDTOUpdate;
 import com.funnycode.onlineshop.entity.Brand;
+import com.funnycode.onlineshop.exception.OnlineShopException;
 import com.funnycode.onlineshop.util.mapper.BrandMapper;
 import com.funnycode.onlineshop.repository.BrandRepository;
 import com.funnycode.onlineshop.service.BrandService;
@@ -44,7 +45,7 @@ public class BrandServiceImpl implements BrandService {
     @Override
     public BrandDTOResponse updateBrand(int id, BrandDTOUpdate brandDTOUpdate) {
         if (!brandRepository.existsById(id)) {
-            throw new RuntimeException("Brand does not exist");
+            throw OnlineShopException.notFoundException("Brand does not exist");
         }
         Brand brand = BrandMapper.toBrand(brandDTOUpdate);
         brand.setId(id);

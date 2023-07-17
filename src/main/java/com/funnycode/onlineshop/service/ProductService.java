@@ -10,4 +10,6 @@ public interface ProductService {
     List<ProductDTOResponse> getProductsBestSeller();
 
     List<ProductDTOResponse> searchProduct();
+
+    ProductDTOResponse getProductById(int id);
 }

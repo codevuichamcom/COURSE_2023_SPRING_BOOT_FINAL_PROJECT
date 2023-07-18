@@ -1,10 +1,13 @@
 package com.funnycode.onlineshop.service.impl;
 
+import com.funnycode.onlineshop.dto.PagingDTOResponse;
+import com.funnycode.onlineshop.dto.ProductDTOFilter;
 import com.funnycode.onlineshop.dto.ProductDTOResponse;
 import com.funnycode.onlineshop.entity.Product;
 import com.funnycode.onlineshop.exception.OnlineShopException;
 import com.funnycode.onlineshop.mapper.ProductMapper;
 import com.funnycode.onlineshop.repository.ProductCategory;
+import com.funnycode.onlineshop.repository.criteria.ProductCategoryCriteria;
 import com.funnycode.onlineshop.service.ProductService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +23,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
     ProductCategory productCategory;
+    ProductCategoryCriteria productCategoryCriteria;
 
     @Override
     public List<ProductDTOResponse> getProductTrending() {
@@ -32,8 +36,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductDTOResponse> searchProduct() {
-        return getRandomProductList(12);
+    public PagingDTOResponse searchProduct(ProductDTOFilter productDTOFilter) {
+        return productCategoryCriteria.search(productDTOFilter);
     }
 
     @Override

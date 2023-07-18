@@ -1,6 +1,8 @@
 package com.funnycode.onlineshop.controller;
 
 import com.funnycode.onlineshop.dto.CategoryDTOResponse;
+import com.funnycode.onlineshop.dto.PagingDTOResponse;
+import com.funnycode.onlineshop.dto.ProductDTOFilter;
 import com.funnycode.onlineshop.dto.ProductDTOResponse;
 import com.funnycode.onlineshop.service.ProductService;
 import lombok.AccessLevel;
@@ -19,19 +21,20 @@ import static com.funnycode.onlineshop.util.Constant.API_VERSION;
 @CrossOrigin
 public class ProductController {
     ProductService productService;
+
     @GetMapping("/trending")
-    public List<ProductDTOResponse> getProductsTrending(){
-        return  productService.getProductTrending();
+    public List<ProductDTOResponse> getProductsTrending() {
+        return productService.getProductTrending();
     }
 
     @GetMapping("/best-seller")
-    public List<ProductDTOResponse> getProductsBestSeller(){
-        return  productService.getProductsBestSeller();
+    public List<ProductDTOResponse> getProductsBestSeller() {
+        return productService.getProductsBestSeller();
     }
 
     @GetMapping("/search")
-    public List<ProductDTOResponse> searchProduct(){
-        return  productService.searchProduct();
+    public PagingDTOResponse searchProduct(@ModelAttribute ProductDTOFilter productDTOFilter) {
+        return productService.searchProduct(productDTOFilter);
     }
 
     @GetMapping("/{id}")

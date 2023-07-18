@@ -1,9 +1,11 @@
 package com.funnycode.onlineshop.service.impl;
 
 import com.funnycode.onlineshop.dto.ProductDTOResponse;
+import com.funnycode.onlineshop.entity.Product;
+import com.funnycode.onlineshop.exception.OnlineShopException;
+import com.funnycode.onlineshop.mapper.ProductMapper;
 import com.funnycode.onlineshop.repository.ProductCategory;
 import com.funnycode.onlineshop.service.ProductService;
-import com.funnycode.onlineshop.mapper.ProductMapper;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -32,6 +34,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDTOResponse> searchProduct() {
         return getRandomProductList(12);
+    }
+
+    @Override
+    public ProductDTOResponse getProductById(int id) {
+        Product product = productCategory.findById(id).orElseThrow(() -> OnlineShopException.notFoundException("Product does not exist"));
+        return ProductMapper.toProductDTOResponse(product);
     }
 
     private List<ProductDTOResponse> getRandomProductList(int end) {

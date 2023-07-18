@@ -28,6 +28,18 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public AccountDTOResponse createAccount(AccountDTOCreate accountDTOCreate) {
+        if (accountDTOCreate.getUsername() == null) {
+            throw OnlineShopException.badRequestException("Username is not null");
+        }
+        if(accountDTOCreate.getEmail() == null){
+            throw OnlineShopException.badRequestException("Email is not null");
+        }
+        if(accountRepository.existsByUsername(accountDTOCreate.getUsername())){
+            throw OnlineShopException.badRequestException("Username is existed");
+        }
+        if(accountRepository.existsByEmail(accountDTOCreate.getEmail())){
+            throw OnlineShopException.badRequestException("Email is existed");
+        }
         accountDTOCreate.setPassword(passwordEncoder.encode(accountDTOCreate.getPassword()));
         Account account = accountRepository.save(AccountMapper.toAccount(accountDTOCreate));
         return AccountMapper.toAccountDTOResponse(account);

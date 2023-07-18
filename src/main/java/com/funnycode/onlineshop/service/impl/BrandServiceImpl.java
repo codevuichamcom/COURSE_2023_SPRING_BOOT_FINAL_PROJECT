@@ -5,7 +5,7 @@ import com.funnycode.onlineshop.dto.BrandDTOResponse;
 import com.funnycode.onlineshop.dto.BrandDTOUpdate;
 import com.funnycode.onlineshop.entity.Brand;
 import com.funnycode.onlineshop.exception.OnlineShopException;
-import com.funnycode.onlineshop.util.mapper.BrandMapper;
+import com.funnycode.onlineshop.mapper.BrandMapper;
 import com.funnycode.onlineshop.repository.BrandRepository;
 import com.funnycode.onlineshop.service.BrandService;
 import lombok.AccessLevel;

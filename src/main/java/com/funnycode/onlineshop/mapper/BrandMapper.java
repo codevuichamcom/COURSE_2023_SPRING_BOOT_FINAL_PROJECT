@@ -1,4 +1,4 @@
-package com.funnycode.onlineshop.util.mapper;
+package com.funnycode.onlineshop.mapper;
 
 import com.funnycode.onlineshop.entity.Brand;
 import com.funnycode.onlineshop.dto.BrandDTOCreate;

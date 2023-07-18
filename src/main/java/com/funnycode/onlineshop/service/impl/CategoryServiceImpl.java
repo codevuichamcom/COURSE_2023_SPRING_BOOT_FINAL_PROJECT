@@ -5,7 +5,7 @@ import com.funnycode.onlineshop.dto.CategoryDTOCreate;
 import com.funnycode.onlineshop.dto.CategoryDTOResponse;
 import com.funnycode.onlineshop.dto.CategoryDTOUpdate;
 import com.funnycode.onlineshop.exception.OnlineShopException;
-import com.funnycode.onlineshop.util.mapper.CategoryMapper;
+import com.funnycode.onlineshop.mapper.CategoryMapper;
 import com.funnycode.onlineshop.repository.CategoryRepository;
 import com.funnycode.onlineshop.service.CategoryService;
 import lombok.AccessLevel;

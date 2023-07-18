@@ -3,7 +3,7 @@ package com.funnycode.onlineshop.service.impl;
 import com.funnycode.onlineshop.dto.ProductDTOResponse;
 import com.funnycode.onlineshop.repository.ProductCategory;
 import com.funnycode.onlineshop.service.ProductService;
-import com.funnycode.onlineshop.util.mapper.ProductMapper;
+import com.funnycode.onlineshop.mapper.ProductMapper;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

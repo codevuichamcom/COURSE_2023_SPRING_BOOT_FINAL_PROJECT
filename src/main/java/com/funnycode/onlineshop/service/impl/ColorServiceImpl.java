@@ -5,7 +5,7 @@ import com.funnycode.onlineshop.dto.ColorDTOCreate;
 import com.funnycode.onlineshop.dto.ColorDTOResponse;
 import com.funnycode.onlineshop.dto.ColorDTOUpdate;
 import com.funnycode.onlineshop.exception.OnlineShopException;
-import com.funnycode.onlineshop.util.mapper.ColorMapper;
+import com.funnycode.onlineshop.mapper.ColorMapper;
 import com.funnycode.onlineshop.repository.ColorRepository;
 import com.funnycode.onlineshop.service.ColorService;
 import lombok.AccessLevel;

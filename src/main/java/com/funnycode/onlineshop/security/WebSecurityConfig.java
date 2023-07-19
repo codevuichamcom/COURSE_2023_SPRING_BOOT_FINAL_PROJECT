@@ -32,6 +32,7 @@ public class WebSecurityConfig {
                 .antMatchers("/img/**").permitAll()
                 .antMatchers(String.format("%s/login", API_VERSION)).permitAll()
                 .antMatchers(HttpMethod.POST, String.format("%s/accounts", API_VERSION)).permitAll()
+                .antMatchers(HttpMethod.GET, String.format("%s/products/**", API_VERSION)).permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);

@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
-import org.springframework.http.HttpStatus;
 
 @Getter
 @Setter
@@ -14,11 +13,4 @@ import org.springframework.http.HttpStatus;
 public class CustomError {
     String code;
     String message;
-
-    public static CustomError notFound(String message){
-        return CustomError.builder()
-                .code("404")
-                .message(message)
-                .build();
-    }
 }

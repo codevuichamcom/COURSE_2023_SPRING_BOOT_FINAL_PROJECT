@@ -11,7 +11,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ProductDTOFilter {
-    Integer pageIndex = 0;
+    Integer pageIndex = 1;
     Integer pageSize = Constant.DEFAULT_PAGE_SIZE;
     Integer categoryId;
     Integer brandId;

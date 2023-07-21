@@ -19,4 +19,5 @@ public class ProductDTOFilter {
     Double priceFrom = 0d;
     Double priceTo = 100d;
     String sortByPrice;
+    String name = "";
 }

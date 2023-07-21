@@ -44,6 +44,8 @@ public class ProductCategoryCriteria {
         sql.append(" and p.price between :priceFrom and :priceTo ");
         params.put("priceFrom", productDTOFilter.getPriceFrom());
         params.put("priceTo", productDTOFilter.getPriceTo());
+        sql.append(" and p.name like :name");
+        params.put("name", "%"+productDTOFilter.getName()+"%");
 
         Query countQuery = em.createQuery(sql.toString().replace("select p", "select count(p.id)"));
 

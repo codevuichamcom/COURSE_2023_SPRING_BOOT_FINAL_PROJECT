@@ -64,7 +64,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 if (jwtTokenUtil.isValid(token, AccountMapper.toTokenPayload(account))) {
 
                     List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-                    UserDetails userDetails = new org.springframework.security.core.userdetails.User(account.getEmail(),
+                    UserDetails userDetails = new org.springframework.security.core.userdetails.User(account.getUsername(),
                             account.getPassword(), authorities);
                     UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
                             userDetails, null, authorities);

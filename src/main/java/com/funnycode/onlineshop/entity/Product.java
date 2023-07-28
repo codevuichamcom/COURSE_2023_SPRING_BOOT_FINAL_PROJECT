@@ -45,5 +45,4 @@ public class Product {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "color_id")
     Color color;
-
 }
